@@ -7,8 +7,6 @@ def rename_into_caps(in_bids_dwi,
     Rename the outputs of the pipelines into CAPS format namely:
     <source_file>_space-b0_preproc{.nii.gz|bval|bvec}
     <source_file>_space-b0_brainmask.nii.gz
-    <source_file>_space-b0_magnitude1.nii.gz
-    <source_file>_space-b0[_fwhm-<fwhm>]_fmap.nii.gz
 
     Args:
         in_bids_dwi (str): Input BIDS DWI to extract the <source_file>

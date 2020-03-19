@@ -109,9 +109,6 @@ class DwiPreprocessingUsingOnlyEddy(cpe.Pipeline):
                 * preproc_bvec (str): Path of the preprocessed bvec
                 * preproc_bval (str): Path of the preprocessed bval
                 * b0_mask (str): Path of the b0 brainmask
-                * magnitude_on_b0 (str): Path of the smoothed calibrated fmap on b0 space
-                * calibrated_fmap_on_b0 (str): Path of the calibrated fmap on b0 space
-                * smoothed_fmap_on_b0 (str): Path of the magnitude fmap on b0 space
 
         Returns:
             A list of (string) output fields name.
@@ -309,10 +306,7 @@ class DwiPreprocessingUsingOnlyEddy(cpe.Pipeline):
             (self.input_node, init_node, [('dwi', 'dwi'),
                                           ('bvec', 'bvec'),
                                           ('bval', 'bval'),
-                                          ('dwi_json', 'dwi_json'),
-                                          ('fmap_magnitude', 'fmap_magnitude'),
-                                          ('fmap_phasediff', 'fmap_phasediff'),
-                                          ('fmap_phasediff_json', 'fmap_phasediff_json')]),
+                                          ('dwi_json', 'dwi_json')]),
             # Generate (bvec, bval) tuple for MRtrix interfaces
             (init_node, get_grad_fsl, [('bval', 'bval'),
                                        ('bvec', 'bvec')]),
